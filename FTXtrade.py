@@ -1,11 +1,8 @@
 import ccxt
 import pandas as pd
+import loginFTX as loginFTX
 
-exchange = ccxt.ftx({
-    'apiKey': 'xiR4FvPEdkPpxWVxYrYYlmJFLpKl7NiSVhEF7IXx',
-    'secret': 'FP3-k92SBMEMa-623lMNwoISkwVEqHTBvw6PovbV',
-})
-
+exchange = loginFTX.loginx()
 def ordercreate(status,amount,price):
     exchange.create_order('XRP-PERP','limit',status,amount,price)
 
