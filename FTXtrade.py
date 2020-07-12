@@ -1,6 +1,6 @@
 import ccxt
 import pandas as pd
-import loginFTX as loginFTX
+import loginFTX
 
 exchange = loginFTX.loginx()
 def ordercreate(status,amount,price):
