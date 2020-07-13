@@ -1,9 +1,13 @@
 import ccxt
 import pandas as pd
+import numpy as np
+import time
+import datetime
 import loginFTX
 
 exchange = loginFTX.loginx()
-
+def ordercreate(status,amount,price):
+    exchange.create_order('XRP-PERP','limit',status,amount,price)
 """
 def loginx():
     return (ccxt.ftx({
@@ -11,8 +15,6 @@ def loginx():
     'secret': 'Your_secret',
     }))
 """
-def ordercreate(status,amount,price):
-    exchange.create_order('XRP-PERP','limit',status,amount,price)
 
 status = 'buy'
 amount = 1
