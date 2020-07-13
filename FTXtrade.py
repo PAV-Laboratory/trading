@@ -4,10 +4,9 @@ import numpy as np
 import time
 import datetime
 import loginFTX
+import connectgoogle
 
 exchange = loginFTX.loginx()
-def ordercreate(status,amount,price):
-    exchange.create_order('XRP-PERP','limit',status,amount,price)
 """
 def loginx():
     return (ccxt.ftx({
@@ -15,6 +14,10 @@ def loginx():
     'secret': 'Your_secret',
     }))
 """
+sheet   =  connectgoogle.opensheet();
+
+def ordercreate(status,amount,price):
+    exchange.create_order('XRP-PERP','limit',status,amount,price)
 
 status = 'buy'
 amount = 1
