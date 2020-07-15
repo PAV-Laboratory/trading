@@ -15,10 +15,14 @@ def ordercreate(status,amount,price):
 
 def addhistory():
     return (pd.DataFrame(data=exchange.fetch_orders()))
+
+def checkbalance():
+    return (pd.DataFrame(data=exchange.fetch_balance()))
+
 status = 'buy'
 amount = 1
 price = 0.198500
 
-tradeorder = addhistory()
-a = json.dumps(tradeorder['info'])
+history = addhistory()
+order = checkbalance()
 #ordercreate(status,amount,price)
