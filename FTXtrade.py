@@ -19,4 +19,6 @@ status = 'buy'
 amount = 1
 price = 0.198500
 
+tradeorder = addhistory()
+a = json.dumps(tradeorder['info'])
 #ordercreate(status,amount,price)
