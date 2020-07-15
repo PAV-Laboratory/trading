@@ -14,7 +14,7 @@ def ordercreate(status,amount,price):
     exchange.create_order('XRP-PERP','limit',status,amount,price)
 
 def addhistory():
-    return (pd.DataFrame(data=exchange.fetch_orders()))
+    return (pd.DataFrame(data=exchange.private_get_positions()))
 
 def checkbalance():
     return (pd.DataFrame(data=exchange.fetch_balance()))
