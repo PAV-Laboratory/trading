@@ -7,14 +7,7 @@ import loginFTX
 import connectgoogle
 
 exchange = loginFTX.loginx()
-"""
-def loginx():
-    return (ccxt.ftx({
-    'apiKey': 'Your_API',
-    'secret': 'Your_secret',
-    }))
-"""
-sheet   =  connectgoogle.opensheet();
+sheet   =  connectgoogle.opensheet()
 
 def ordercreate(status,amount,price):
     exchange.create_order('XRP-PERP','limit',status,amount,price)
@@ -23,4 +16,4 @@ status = 'buy'
 amount = 1
 price = 0.198500
 
-ordercreate(status,amount,price)
+#ordercreate(status,amount,price)
