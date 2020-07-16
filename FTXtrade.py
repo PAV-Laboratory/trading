@@ -13,7 +13,7 @@ sheet   =  connectgoogle.opensheet()
 def ordercreate(status,amount,price):
     exchange.create_order('XRP-PERP','limit',status,amount,price)
 
-def addhistory():
+def checkposition():
     return (pd.DataFrame(data=exchange.private_get_positions()))
 
 def checkbalance():
@@ -23,6 +23,6 @@ status = 'buy'
 amount = 1
 price = 0.198500
 
-history = addhistory()
+history = checkposirtion()
 order = checkbalance()
 #ordercreate(status,amount,price)
