@@ -11,7 +11,7 @@ exchange = loginFTX.loginx()
 sheet   =  connectgoogle.opensheet()
 
 def ordercreate(status,amount,price):
-    exchange.create_order('XRP-PERP','limit',status,amount,price)
+    exchange.create_order('XRP-PERP','market',status,amount)
 
 def checkposition():
     return (pd.DataFrame(data=exchange.private_get_positions()))
@@ -19,10 +19,12 @@ def checkposition():
 def checkbalance():
     return (pd.DataFrame(data=exchange.fetch_balance()))
 
+def checkprice()
+    return (pd.DataFrame(data=exchange.fetch_tickers('XRP-PERP')))
 status = 'buy'
-amount = 1
+amount = 10
 price = 0.198500
 
-history = checkposirtion()
-order = checkbalance()
+#history = checkposition()
+#order = checkbalance()
 #ordercreate(status,amount,price)
