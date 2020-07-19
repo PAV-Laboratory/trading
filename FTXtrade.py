@@ -21,11 +21,15 @@ def checkbalance():
 
 def checkprice():
     return (pd.DataFrame(data=exchange.fetch_tickers('XRP-PERP')))
-    
+
 status = 'buy'
 amount = 10
 price = 0.198500
 
-#history = checkposition()
+position = checkposition() 
+price_xrp   =   checkprice()
+ask_xrp =   price_xrp.iloc[0]
+bid_xrp = price_xrp.iloc[4]
+amount_p = position["result"][0]["collateralUsed"] * 100
 #order = checkbalance()
 #ordercreate(status,amount,price)
