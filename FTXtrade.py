@@ -19,8 +19,9 @@ def checkposition():
 def checkbalance():
     return (pd.DataFrame(data=exchange.fetch_balance()))
 
-def checkprice()
+def checkprice():
     return (pd.DataFrame(data=exchange.fetch_tickers('XRP-PERP')))
+    
 status = 'buy'
 amount = 10
 price = 0.198500
