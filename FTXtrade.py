@@ -30,6 +30,7 @@ position = checkposition()
 price_xrp   =   checkprice()
 ask_xrp =   price_xrp.iloc[0]
 bid_xrp = price_xrp.iloc[4]
-amount_p = position["result"][0]["collateralUsed"] * 100
+amount_p = position["result"][0]["collateralUsed"] * 100 / ((bid_xrp + ask_xrp)/2)
+
 #order = checkbalance()
 #ordercreate(status,amount,price)
