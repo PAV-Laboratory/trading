@@ -10,8 +10,12 @@ import connectgoogle
 exchange = loginFTX.loginx()
 sheet   =  connectgoogle.opensheet()
 
-def ordercreate(status,amount,price):
-    exchange.create_order('XRP-PERP','market',status,amount)
+def ordercreate(amount_p,avg_price,last_price,start_amount):
+    #exchange.create_order('XRP-PERP','market',status,amount)
+    if(last_price - avg_price > 0)
+    {
+
+    }
 
 def checkposition():
     return (pd.DataFrame(data=exchange.private_get_positions()))
@@ -22,15 +26,22 @@ def checkbalance():
 def checkprice():
     return (pd.DataFrame(data=exchange.fetch_tickers('XRP-PERP')))
 
-status = 'buy'
-amount = 10
-price = 0.198500
-
+def calamount(start_price,start_amount,avg_price,step):
+    return (start_amount+(round(start_price - avg_price,1)) * (step/avg_price))
+    
 position = checkposition() 
 price_xrp   =   checkprice()
 ask_xrp =   price_xrp.iloc[0]
 bid_xrp = price_xrp.iloc[4]
-amount_p = position["result"][0]["collateralUsed"] * 100 / ((bid_xrp + ask_xrp)/2)
+avg_price = (bid_xrp + ask_xrp)/2
+start_price = 2.0000
+start_amount = 1000
+step = 3000
+amount_p = round(position["result"][0]["cost"] * 100) / (avg_price)
+
+
+
+
 
 #order = checkbalance()
 #ordercreate(status,amount,price)
