@@ -27,9 +27,9 @@ def checkprice():
 
 def calamount(start_price,start_amount,avg_price,step):
     if((start_price - avg_price)<0):
-        return (start_amount-(round_down(abs(np.subtract(start_price,avg_price)),3)) * (step))
-    else:
         return (start_amount+(round_down(abs(np.subtract(start_price,avg_price)),3)) * (step))
+    else:
+        return (start_amount-(round_down(abs(np.subtract(start_price,avg_price)),3)) * (step))
 def round_down(n, decimals=0):
     multiplier = 10 ** decimals
     return math.floor(n * multiplier) / multiplier
@@ -40,9 +40,9 @@ def checkamount(position,avg_price):
     return position["result"][0]["netSize"]
 def ordering(amount_p,amount_want):
     if(amount_p > amount_want):
-        print ('Sell %f'%(abs(amount_p-amount_want)))
-    elif(amount_p < amount_want):
         print ('Buy %f'%(abs(amount_p-amount_want)))
+    elif(amount_p < amount_want):
+        print ('Sell %f'%(abs(amount_p-amount_want)))
     else:
         print('none')
 position = checkposition() 
