@@ -12,10 +12,8 @@ sheet   =  connectgoogle.opensheet()
 
 def ordercreate(amount_p,avg_price,last_price,start_amount):
     #exchange.create_order('XRP-PERP','market',status,amount)
-    if(last_price - avg_price > 0)
-    {
-
-    }
+    #if(last_price - avg_price > 0)
+    return 0
 
 def checkposition():
     return (pd.DataFrame(data=exchange.private_get_positions()))
@@ -27,16 +25,16 @@ def checkprice():
     return (pd.DataFrame(data=exchange.fetch_tickers('XRP-PERP')))
 
 def calamount(start_price,start_amount,avg_price,step):
-    return (start_amount+(round(start_price - avg_price,1)) * (step/avg_price))
+    return (start_amount+(round(start_price - avg_price,3)) * (step))
     
 position = checkposition() 
 price_xrp   =   checkprice()
 ask_xrp =   price_xrp.iloc[0]
 bid_xrp = price_xrp.iloc[4]
-avg_price = (bid_xrp + ask_xrp)/2
-start_price = 2.0000
+avg_price = (bid_xrp[0] + ask_xrp[0])/2
+start_price = 0.2000
 start_amount = 1000
-step = 3000
+step = 20000
 amount_p = round(position["result"][0]["cost"] * 100) / (avg_price)
 
 

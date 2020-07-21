@@ -9,12 +9,12 @@ exchange = ccxt.kucoin({
     'password' : 'tongsang'
 })
 
-def ordercreate(status,amount,price):
-    exchange.create_order('BNB/USDT','limit',status,amount,price)
+#def ordercreate(status,amount,price):
+ #   exchange.create_order('BNB/USDT','limit',status,amount,price)
 
 #print(exchange.fetch_balance ()) #look at how much balance
 
 #print(exchange.fetch_total_balance())
 #print(exchange.fetch_ticker('BNB/USD')['last'])
 
-ordercreate('buy',0.001,16.0)
+#ordercreate('buy',0.001,16.0)
